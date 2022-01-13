@@ -1,0 +1,22 @@
+ALGORITHM tri_insertion
+VAR
+    i, j, index: INTEGER:
+    tab : ARRAY_OF INTEGER;
+
+BEGIN
+
+    tab := [1,12,4,5,23,21,8,11];
+
+    FOR i FROM 1 TO tab.length - 1 STEP step  DO
+        j := i - 1;
+        index := tab[i];
+
+        WHILE (j >= 0 && tab[j] > index) DO
+            tab[j+1] := tab[j];
+            j--;
+        END_WHILE
+        
+        tab[j+1] := index;
+    END_FOR
+
+END
